@@ -1,0 +1,411 @@
+<html lang='en'>
+<head>
+	<meta charset='utf-8'/>
+	<title>G00316712</title>
+	<meta name="viewport" content ="width=device-with, initil-scale=1, maximum-scale=1"/>
+	
+	<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+	-->
+	<link rel="stylesheet" href="_/css/jquery.mobile.css"/>
+	<script src="../_/js/jquery.js"></script>
+	<script src="../_/js/jquery.mobile.js"></script>
+		
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css"/>
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+		
+	<script src="_/js/myscript.js"></script>
+	<link rel="stylesheet" href="_/css/mystyles.css"/>
+	
+	<!--Rss Feed links-->
+	
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+   
+	
+	
+</head>
+<!--HOME PAGE----------------------------------------------------------------------------------------------------------------->	
+<body>
+	<div id="home" data-role="page" data-title="G00316712 HOME">
+		
+			<a href="http://www.patrickjoyce1979.com/wedding">
+				<img src="_/../images/pjl.gif" alt="" width="90%" height="90%"/>
+			</a>
+		<div data-role="content">
+		</div>
+		
+		<div data-role="footer"
+			 data-position="fixed"
+			 data-id="dontfade">
+				
+				<div data-role="navbar">
+					<ul>	
+						<li>
+							<a href="#home"
+			   			data-role="button"
+						data-transition="flip"
+			   			data-icon="home">Home
+							</a>
+						</li>
+						<li>
+							<a href="#blog"
+			   			data-role="button"
+						data-transition="flip"
+			   			data-icon="minus">Movies
+							</a>
+						</li>
+						<li>
+							<a href="#vgallery"
+			   			data-role="button"
+						data-transition="flip"
+			   			data-icon="grid">Videos
+							</a>
+						</li>
+						<li>
+							<a href="#gallery"
+			   			data-role="button"
+						data-transition="flip"
+			   			data-icon="grid">Gallery
+							</a>
+						</li>
+					</ul>	
+				</div>
+		</div>
+				
+	</div>
+<!--BLOG PAGE----------------------------------------------------------------------------------------------------------------->
+	<div id="blog" data-role="page" data-title="G00316712 BLOG">
+		<div data-role="header" data-position="fixed"  data-id="dontfadeh">
+			<h1>MOVIES</h1>
+			<a href="#home" 
+			   data-icon="home" 
+			   data-transition="flip" 
+			   data-iconpos="notext">Home
+			</a>
+			<a href="#info"
+			   data-icon="info" 
+			   data-transition="pop"
+			   data-iconpos="notext">Information
+			</a>
+		</div>
+			<h2><p>My favourite Movies</p></h2>
+		
+		
+						<!-- Rss Feed Code -->
+    <script type="text/javascript">
+		$(function() {
+			$.get("http://api.themoviedb.org/3/search/movie?api_key=9b8c3481bc4c4dcf4d3124413581ace5&query=spy",
+		  function(data) {
+				var results = data.results;
+				for (var i = 0 ; i < results.length ; i+=1) {
+					var movie = results[i];
+					
+						var movieDiv = $("<div/>");
+						movieDiv.append($("<a/>", {text: movie.title, href: "#movie_" + i, "data-ajax": false}));
+						$("#movieList").append(movieDiv);
+
+						var movieInfoDiv = $("<div/>");
+						movieInfoDiv.append($("<a/>", {name: "movie_" +i}));
+						movieInfoDiv.append($("<p/>", {text: movie.title}));
+						movieInfoDiv.append($("<p/>", {text: movie.overview}));
+						$("#movieDetails").append(movieInfoDiv);
+				  
+				}
+			});
+		});
+    </script>	
+		
+		
+		
+		<div data-role="content">
+			<div id="movieList"></div>
+			<div id="movieDetails"></div>
+		</div>
+			<div data-role="footer"
+				 data-position="fixed"
+				 data-id="dontfade">
+				<div data-role="navbar">
+					<ul>	
+						<li>
+							<a href="#home"
+							   data-role="button"
+							   data-transition="flip"
+							   data-icon="home">Home
+							</a>
+						</li>
+						<li>
+							<a href="#blog"
+							   data-role="button"
+							   data-transition="flip"
+							   data-icon="minus">Movies
+							</a>
+						</li>
+						<li>
+							<a href="#vgallery"
+							   data-role="button"
+							   data-transition="flip"
+							   data-icon="grid">Videos
+							</a>
+						</li>
+						<li>
+							<a href="#gallery"
+							   data-role="button"
+							   data-transition="flip"
+							   data-icon="grid">Gallery
+							</a>
+						</li>
+					</ul>	
+				</div>
+			</div>
+		<body>
+		</body>
+	</div>
+<!--GALLERY PAGE----------------------------------------------------------------------------------------------------------------->
+	
+	<div id="gallery" data-role="page" data-title="G00316712 GALLERY"><!--START of page -->
+		<div data-role="header" data-position="fixed"  data-id="dontfadeh"><!--START of header -->
+			<h1>GALLERY</h1>
+				<a href="#home" 
+				   data-icon="home" 
+				   data-transition="flip" 
+				   data-iconpos="notext">Home
+				</a>
+				<a href="#info"
+				   data-icon="info" 
+				   data-transition="pop" 
+				   data-iconpos="notext">Information
+				</a>
+		</div><!--END of header -->
+			<p>Welcome to my Photography Gallery</p>	
+		<div id="contents">
+			<div data-role="ui-grid-c" id="photolist">
+			</div>
+		</div>
+			<div data-role="footer"
+				 data-position="fixed"
+				 data-id="dontfade"><!--START of footer -->
+				<div data-role="navbar"><!--START of navbar -->
+					<ul>	
+						<li>
+							<a href="#home"
+							   data-role="button"
+							   data-transition="flip"
+							   data-icon="home">Home
+							</a>
+						</li>
+						<li>
+							<a href="#blog"
+							   data-role="button"
+							   data-transition="flip"
+							   data-icon="minus">Movies
+							</a>
+						</li>
+						<li>
+							<a href="#vgallery"
+							   data-role="button"
+							   data-transition="flip"
+							   data-icon="grid">Videos
+							</a>
+						</li>
+						<li>
+							<a href="#gallery"
+							   data-role="button"
+							   data-transition="flip"
+							   data-icon="grid">Gallery
+							</a>
+						</li>
+					</ul>	
+				</div><!--END of navbar -->
+			</div><!--END of footer -->
+		</div><!--END of page -->
+<!--SHOW PHOTO PAGE----------------------------------------------------------------------------------------------------------------->	
+		<div data-role="page" id="showphoto"><!--START of page -->
+			<div data-role="header"
+					 data-position="fixed"
+					 data-theme="d"><!--START of header -->
+					<a href="#gallery"
+					   data-transition="fade"
+					   data-icon="back"
+					   data-iconpos="notext">gallery
+					</a>
+						<h1>FLICKR GALLERY</h1>									
+			</div><!--END of header -->
+			<div data-role="content">
+				<div id="myphoto">
+				</div>
+			</div>		
+		</div><!--END of page -->
+<!--VIDEO GALLERY PAGE----------------------------------------------------------------------------------------------------------------->
+	<div id="vgallery" data-role="page" data-title="G00316712 VIDEO GALLERY"><!--START of page -->
+		<div data-role="header" data-position="fixed"  data-id="dontfadeh"><!--START of header -->
+			<h1>VIDEO GALLERY</h1>
+				<a href="#home" 
+				   data-icon="home" 
+				   data-transition="flip" 
+				   data-iconpos="notext">Home
+				</a>			
+				<a href="#info"
+				   data-icon="info" 
+				   data-transition="pop" 
+				   data-iconpos="notext">Information
+				</a>
+		</div><!--END of header -->
+		<div data-role ="content">
+			<p>Welcome to my Video Gallery</p>
+		</div>	
+			<div data-role="content">
+				<div id = "videolist" class="ui-grid-a"><!--START of grid -->
+					<div class ="ui-block-a">
+						<a href="https://youtu.be/xGL_4bJZTkA">
+							<div class="movietitle">Aoife
+							</div>
+							<iframe src="https://www.youtube.com/embed/xGL_4bJZTkA" frameborder="0" allowfullscreen></iframe>
+						</a>
+					</div>
+					<div class ="ui-block-b">
+						<a href="https://youtu.be/xGL_4bJZTkA">
+							<div class="movietitle">Naomi
+							</div>
+							<iframe  src="https://www.youtube.com/embed/3L-m_LL_4pU" frameborder="0" allowfullscreen></iframe>
+						</a>
+					</div>
+					<div class ="ui-block-a">
+						<a href="https://youtu.be/xGL_4bJZTkA">
+							<div class="movietitle">Music Video</div>
+								<iframe  src="https://www.youtube.com/embed/ezfVTuW1GnA" frameborder="0" allowfullscreen></iframe>
+						</a>
+					</div>
+					<div class ="ui-block-b">
+						<a href="https://youtu.be/xGL_4bJZTkA">
+							<div class="movietitle">Sarah</div>
+								<iframe  src="https://www.youtube.com/embed/swkKlwr9xRQ" frameborder="0" allowfullscreen></iframe>
+						</a>
+					</div>
+					<div class ="ui-block-a">
+						<a href="https://youtu.be/xGL_4bJZTkA">
+							<div class="movietitle">PS Smooth Skin
+							</div>
+								<iframe  src="https://www.youtube.com/embed/-EN7iHERhlw" frameborder="0" allowfullscreen></iframe>
+						</a>
+					</div>
+					<div class ="ui-block-b">
+						<a href="https://youtu.be/xGL_4bJZTkA">
+							<div class="movietitle">PP Video
+							</div>
+								<iframe  src="https://www.youtube.com/embed/BQ6hqBBoFDA" frameborder="0" allowfullscreen></iframe>
+						</a>
+					</div>
+				</div><!--END of grid -->
+			</div>
+				
+			
+		<div data-role="footer"
+			 data-position="fixed"
+			 data-id="dontfade">
+			<div data-role="navbar">
+				<ul>	
+					<li>
+						<a href="#home"
+			   			data-role="button"
+						data-transition="flip"
+			   			data-icon="home">Home
+						</a>
+					</li>
+					<li>
+						<a href="#blog"
+			   			data-role="button"
+						data-transition="flip"
+			   			data-icon="minus">Movies
+						</a>
+					</li>
+					<li>
+						<a href="#vgallery"
+			   			data-role="button"
+						data-transition="flip"
+			   			data-icon="grid">Videos
+						</a>
+					</li>
+					<li>
+						<a href="#gallery"
+			   			data-role="button"
+						data-transition="flip"
+			   			data-icon="grid">Gallery
+						</a>
+					</li>
+				</ul>	
+			</div>
+		</div>
+	</div>
+</div>
+<!--INFORMATION PAGE----------------------------------------------------------------------------------------------------------------->
+
+	<div id="info" data-role="page" data-title="INFORMATION">
+		<div data-role="header" data-position="fixed"  data-id="dontfadeh">
+			<h1>INFORMATION</h1>
+				<a href="#" 
+				   data-icon="back" 
+				   data-transition="fade"
+				   data-rel="back"
+				   data-iconpos="notext">
+				</a>
+					<div data-role="container">
+						<p>G00316712 Patrick Joyce
+						</p>
+						<p>This App was Designed using Jquery Mobile, Jason, Jquery, HTML5, CSS3 JavaScript.
+						</p>
+						<a href="https://drive.google.com/file/d/0B3rdpYDGh8x8QWFPLUFJZ1dzQ3c/view?usp=sharing">DOCUMENTATION</a>
+					</div>
+			
+		</div>
+			<div data-role="footer"
+			 data-position="fixed"
+			 data-id="dontfade">
+				<div data-role="navbar">
+					<ul>	
+						<li>
+							<a href="#home"
+							data-role="button"
+							data-transition="flip"
+							data-icon="home">Home
+							</a>
+						</li>
+						<li>
+							<a href="#blog"
+							data-role="button"
+							data-transition="flip"
+							data-icon="minus">Movies
+						</a>
+						</li>
+						<li>
+							<a href="#vgallery"
+							data-role="button"
+							data-transition="flip"
+							data-icon="grid">Videos
+							</a>
+						</li>
+						<li>
+							<a href="#gallery"
+							data-role="button"
+							data-transition="flip"
+							data-icon="grid">Gallery
+							</a>
+						</li>
+					</ul>	
+				</div>
+			</div>
+
+	<body>
+		</body>			
+	</div>
+<!------------------------------------------------------------------------------------------------------------------->	
+<script src="https://api.flickr.com/services/feeds/photos_public.gne?id=33239515@N04&format=json"></script>
+
+	
+	<!--http://blogname.blogspot.com/feeds/posts/default?alt=rss-->
+	
+	
+</body>
+
+
+</html>
